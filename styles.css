@@ -1,0 +1,134 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Floating Hearts */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.hearts::after {
+  content: "💖 💕 💘 💝 💗";
+  position: absolute;
+  font-size: 2em;
+  animation: floatHearts 10s linear infinite;
+}
+@keyframes floatHearts {
+  0% { transform: translateY(100vh) translateX(0) rotate(0deg);}
+  100% { transform: translateY(-10vh) translateX(100vw) rotate(360deg);}
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: #ffe6f0;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+.hero h1 {
+  font-size: 2.5em;
+  color: #ff3366;
+}
+.hero p {
+  font-size: 1.2em;
+  color: #333;
+  margin: 10px 0 20px;
+}
+.hero-img {
+  max-width: 300px;
+  border-radius: 50%;
+  border: 4px solid #ff3366;
+}
+
+/* Story Section */
+.story {
+  padding: 50px 20px;
+  background: #fff0f5;
+  text-align: center;
+  z-index: 1;
+}
+.story h2 {
+  color: #ff3366;
+  margin-bottom: 20px;
+}
+.story p {
+  max-width: 700px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 50px 20px;
+  background: #ffe6f0;
+  text-align: center;
+  z-index: 1;
+}
+.gallery h2 {
+  color: #ff3366;
+  margin-bottom: 20px;
+}
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.photos img {
+  max-width: 200px;
+  border-radius: 10px;
+  border: 2px solid #ff3366;
+  transition: transform 0.3s;
+}
+.photos img:hover {
+  transform: scale(1.1);
+}
+
+/* Love Note Section */
+.love-note {
+  padding: 50px 20px;
+  background: #fff0f5;
+  text-align: center;
+  z-index: 1;
+}
+.love-note h2 {
+  color: #ff3366;
+  margin-bottom: 20px;
+}
+.love-note p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background: #ff3366;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Fade-in animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}

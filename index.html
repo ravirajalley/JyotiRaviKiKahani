@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Floating hearts container -->
+  <div class="hearts"></div>
+
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <h1>Happy Anniversary, My Love 💖</h1>
+    <p>Celebrating our journey together</p>
+    <img src="images/hero.jpg" alt="Us" class="hero-img">
+  </section>
+
+  <!-- Story Section -->
+  <section class="story fade-in">
+    <h2>Our Story</h2>
+    <p>From the day we met, every moment has been magical. Here's a glimpse of our beautiful journey together…</p>
+    <p>You can add 3-4 paragraphs here sharing memories, adventures, and heartfelt messages.</p>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section class="gallery fade-in">
+    <h2>Our Memories</h2>
+    <div class="photos">
+      <img src="images/photo1.jpg" alt="Memory 1">
+      <img src="images/photo2.jpg" alt="Memory 2">
+      <img src="images/photo3.jpg" alt="Memory 3">
+      <!-- Add up to 20 photos -->
+    </div>
+  </section>
+
+  <!-- Love Note Section -->
+  <section class="love-note fade-in">
+    <h2>My Love Message</h2>
+    <p>Thank you for being the most amazing partner. I love you more every day, and I can’t wait for the memories yet to come. 💕</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Our Love Story</p>
+  </footer>
+
+  <!-- Scroll animation script -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
