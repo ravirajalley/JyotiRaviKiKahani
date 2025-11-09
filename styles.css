@@ -24,8 +24,8 @@
   animation: floatHearts 10s linear infinite;
 }
 @keyframes floatHearts {
-  0% { transform: translateY(100vh) translateX(0) rotate(0deg);}
-  100% { transform: translateY(-10vh) translateX(100vw) rotate(360deg);}
+  0% { transform: translateY(100vh) translateX(0) rotate(0deg);} 
+  100% { transform: translateY(-10vh) translateX(100vw) rotate(360deg);} 
 }
 
 /* Hero Section */
